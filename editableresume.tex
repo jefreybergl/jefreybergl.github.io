@@ -1,0 +1,134 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Packages
+\usepackage[margin=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+% Remove page numbers
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+
+% Section formatting
+\titleformat{\section}
+    {\large\bfseries\uppercase}
+    {}
+    {0em}
+    {}
+    [\titlerule]
+
+\titlespacing{\section}{0pt}{7pt}{3pt}
+
+% Subsection formatting (for entries)
+\titleformat{\subsection}
+    {\bfseries}
+    {}
+    {0em}
+    {}
+
+\titlespacing{\subsection}{0pt}{4pt}{0pt}
+
+% Custom commands
+\newcommand{\institution}[1]{\textbf{#1}}
+\newcommand{\position}[1]{\textit{#1}}
+\newcommand{\dates}[1]{\hfill #1}
+
+% Reduce spacing in lists
+\setlist[itemize]{leftmargin=*,nosep,after=\vspace{1pt}}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\LARGE\textbf{Jefrey Bergl}} \\[3pt]
+    \href{mailto:jbergl@unc.edu}{jbergl@unc.edu} $\mid$
+    (336) 339-9069 $\mid$
+    \href{https://jefreybergl.github.io/}{Website} $\mid$
+    \href{https://github.com/jefreybergl}{GitHub}
+\end{center}
+
+\vspace{-8pt}
+
+%%% A. EDUCATION %%%
+\section{Education}
+
+\institution{University of North Carolina at Chapel Hill} \dates{Expected Graduation: May 2026} \\
+\position{\textbf{BS} Computer Science and Applied Mathematics} \hfill Dean's List (5 semesters) \\
+\textbf{Coursework:} Graduate Machine Learning, Graduate Computer Vision, Graduate Deep Learning, Optimization for ML, Numerical Analysis
+
+%%% B. PUBLICATIONS & PREPRINTS %%%
+\section{Publications \& Preprints}
+
+Thomas Hofweber, \textbf{Jefrey Bergl}, Ian Reyes, Amir Sadovnik.
+\textit{The Black Tuesday Attack: How to Crash the Stock Market With Adversarial Attacks to Financial Forecasting Models}.
+Submitted to \textit{The Journal of Cybersecurity}, 2025.
+\href{https://arxiv.org/abs/2510.18990}{arXiv:2510.18990}.
+
+%%% C. RESEARCH EXPERIENCE %%%
+\section{Research Experience}
+
+\institution{UNC Chapel Hill} \dates{Oct 2024 -- Present} \\
+\position{Undergraduate Research Assistant} (Advisor: Prof.\ Thomas Hofweber) \\[-6pt]
+\begin{itemize}
+    \item Co-authored paper on adversarial attacks against financial forecasting models (submitted to \textit{Journal of Cybersecurity}; see Publications).
+    \item Designed and implemented adversarial perturbation framework targeting CNN and MLP forecasting architectures.
+    \item Secured \$3,000 in undergraduate research funding to support the project.
+\end{itemize}
+
+%%% D. INDEPENDENT RESEARCH PROJECTS %%%
+\section{Independent Research Projects}
+
+\textbf{The Representation-Reasoning Gap: Encoding vs.\ Reasoning in LMs}
+[\href{https://github.com/jefreybergl/The-Represenation-Reasoning-Gap}{GitHub}] \hfill Jan 2026 \\
+\textit{Independent Research} $\vert$ Python, PyTorch, TransformerLens \\[-6pt]
+\begin{itemize}
+    \item Showed that LMs (GPT-2 Medium, Pythia 1.4B/2.8B) encode spatial position with 98--100\% probe accuracy yet achieve only 0--5\% behavioral accuracy, revealing a representation-reasoning dissociation.
+    \item Designed a controlled 5$\times$5 grid-world task (2,500 scenarios); trained ridge classifiers on residual-stream activations across all layers and step counts.
+    \item Found position representations consolidate at the final token (+22pp over step tokens), ruling out information loss and localizing the bottleneck to the unembedding layer.
+\end{itemize}
+
+\textbf{H-JEPA: Learning Hamiltonian Dynamics on Latent Video Embeddings}
+[\href{https://github.com/jefreybergl/H-JEPA}{GitHub}] \hfill Dec 2025 \\
+\textit{Independent Research} $\vert$ Python, PyTorch, V-JEPA 2 \\[-6pt]
+\begin{itemize}
+    \item Designed a latent world model enforcing Hamiltonian mechanics on frozen V-JEPA 2 embeddings; states evolve via a symplectic St\"{o}rmer--Verlet integrator with learnable timestep.
+    \item Achieved 1.9$\times$ lower prediction MSE than a parameter-matched MLP on 15-step rollouts with 30\% fewer parameters (919K vs.\ 1.3M) and bounded energy drift.
+    \item Conducted ablation studies isolating symplectic integration and energy conservation contributions, revealing a prediction--conservation trade-off across four model variants.
+\end{itemize}
+
+%%% E. PRESENTATIONS %%%
+\section{Presentations}
+
+\textbf{CoreAI UNC Research Showcase} -- ``The Black Tuesday Attack''
+[\href{https://drive.google.com/file/d/1dxe09yK2t-jKYxDvMgamqlDRq_Eh0SYO/view?usp=sharing}{poster}]
+\dates{Feb 2026}
+
+\textbf{AI@UNC} -- ``Adversarial Attacks on Financial Forecasting Models''
+[\href{https://drive.google.com/file/d/1wtKcK2hbIyacfg8mf0JP0TJNtrU2I4Q9/view?usp=sharing}{slides}]
+\dates{April 2025} \\
+\hspace*{1em}\textit{Selected for Spotlight Presentation}
+
+\textbf{COMP 790: Graduate Computer Vision} -- ``Evaluating Real World ViT Performance''
+[\href{https://drive.google.com/file/d/1pDFAlfCgygF0m94B9xhhYrKzUEZAEjkT/view?usp=sharing}{poster}]
+\dates{May 2025}
+
+%%% F. TECHNICAL SKILLS %%%
+\section{Technical Skills}
+
+\textbf{Languages:} Python, Java $\mid$
+\textbf{Frameworks \& Libraries:} PyTorch, TransformerLens $\mid$
+\textbf{Tools:} Git, \LaTeX
+
+\end{document}
